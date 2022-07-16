@@ -19,17 +19,22 @@ const style = {
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  borderRadius:2,
 };
 
 export const FillForm = (props) => {
   const { addCard } = useContext(CardsContext);
 
+  // modal functions
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const [activity, setActivity] = useState("");
-
   const [esd, setEsd] = useState(null);
   const [efd, setEfd] = useState(null);
   const [lsd, setLsd] = useState(null);
@@ -44,33 +49,6 @@ export const FillForm = (props) => {
     setLfd(null);
     handleClose();
   };
-
-  // const { setCard } = useContext(CreateCardContext);
-
-  // const handleActivityInput = (event) => {
-  //   setCardObj({ ...cardObj, activity: event.target.value });
-  // };
-
-  // const handleESDInput = (event) => {
-  //   setCardObj({ ...cardObj, esd: event.target.value });
-  // };
-
-  // const handleEFDInput = (event) => {
-  //   setCardObj({ ...cardObj, efd: event.target.value });
-  // };
-
-  // const handleLSDInput = (event) => {
-  //   setCardObj({ ...cardObj, lsd: event.target.value });
-  // };
-
-  // const handleLFDInput = (event) => {
-  //   setCardObj({ ...cardObj, lfd: event.target.value });
-  // };
-
-  // const addCard = () => {
-
-  //   addCardObj(prevCards => [...prevCards, {}]);
-  // };
 
   return (
     <div>
@@ -93,7 +71,7 @@ export const FillForm = (props) => {
           </div>
           <br />
           <div className="modalBlock1">
-            <span className="modalTitle">ESD</span>
+            <span className="modalTitle">Early Start Date (ESD)</span>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Basic example"
@@ -104,15 +82,10 @@ export const FillForm = (props) => {
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
-            {/* <Input
-            color="secondary"
-            value={esd}
-            onChange={(e) => setEsd(e.target.value)}
-          /> */}
           </div>
           <br />
           <div className="modalBlock1">
-            <span className="modalTitle">EFD</span>
+            <span className="modalTitle">Early Finish Date (EFD)</span>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Basic example"
@@ -123,15 +96,10 @@ export const FillForm = (props) => {
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
-            {/* <Input
-              color="secondary"
-              value={efd}
-              onChange={(e) => setEfd(e.target.value)}
-            /> */}
           </div>
           <br />
           <div className="modalBlock1">
-            <span className="modalTitle">LSD</span>
+            <span className="modalTitle">Late Start<br/>Date (LSD)</span>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Basic example"
@@ -142,15 +110,10 @@ export const FillForm = (props) => {
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
-            {/* <Input
-              color="secondary"
-              value={lsd}
-              onChange={(e) => setLsd(e.target.value)}
-            /> */}
           </div>
           <br />
           <div className="modalBlock1">
-            <span className="modalTitle">LFD</span>
+            <span className="modalTitle">Late Finish Date (LFD)</span>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Basic example"
@@ -161,16 +124,15 @@ export const FillForm = (props) => {
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
-            {/* <Input
-              color="secondary"
-              value={lfd}
-              onChange={(e) => setLfd(e.target.value)}
-            /> */}
           </div>
           <br />
           <div className="ButtonsBot">
-            <Button onClick={submit}>Add</Button>
-            <Button onClick={handleClose}>Close</Button>
+            <Button onClick={submit} variant="contained" color="success" size='small'>
+              Submit
+            </Button>
+            <Button onClick={handleClose} variant="contained" color="error" size='small'>
+              Cancel
+            </Button>
           </div>
         </Box>
       </Modal>

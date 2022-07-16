@@ -20,7 +20,9 @@ export const Card = (props) => {
   const handleDeleteCard = () => {
     deleteCard(id);
   };
-  console.log(123,esd, efd, lsd, lfd)
+ 
+  
+
 
   return (
     <div className="cardContainer">
