@@ -4,9 +4,52 @@ import React, { createContext, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
 import ButtonAppBar from "../Header/header";
-import { CardsList } from "../card/card";
-import { FillForm } from "../Fill form/FillForm";
+import { CardsList } from "../card/Card";
+import { FillForm } from "../fillForm/FillForm";
 import Toolbar from "@mui/material/Toolbar";
+
+const defaultCards = [
+  {
+    id: "1",
+    activity: "Test 1",
+    esd: "07/14/2022",
+    efd: "07/15/2022",
+    lsd: "07/15/2022",
+    lfd: "07/16/2022",
+  },
+  {
+    id: "2",
+    activity: "Test 2",
+    esd: "07/16/2022",
+    efd: "07/17/2022",
+    lsd: "07/17/2022",
+    lfd: "07/18/2022",
+  },
+  {
+    id: "3",
+    activity: "Test 3",
+    esd: "07/17/2022",
+    efd: "07/18/2022",
+    lsd: "07/18/2022",
+    lfd: "07/19/2022",
+  },
+  {
+    id: "4",
+    activity: "Test 4",
+    esd: "07/18/2022",
+    efd: "07/19/2022",
+    lsd: "07/19/2022",
+    lfd: "07/20/2022",
+  },
+  {
+    id: "5",
+    activity: "Test 5",
+    esd: "07/19/2022",
+    efd: "07/20/2022",
+    lsd: "07/21/2022",
+    lfd: "07/22/2022",
+  },
+];
 
 export const CardsContext = createContext({
   cards: [],
@@ -15,21 +58,19 @@ export const CardsContext = createContext({
 });
 
 function App() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(defaultCards);
 
   const addCard = (id, activity, esd, efd, lsd, lfd) => {
     const newCard = { id, activity, esd, efd, lsd, lfd };
     setCards((prevCards) => [...prevCards, newCard]);
   };
-  
+
   const deleteCard = (id) => {
     const newCards = cards.filter((card) => card.id !== id);
     setCards(newCards);
   };
 
-  const editCard = () => {
-    
-  }
+  const editCard = () => {};
 
   return (
     <div className="App">
@@ -46,7 +87,7 @@ function App() {
         <div className="two">
           <AppBar
             position="static"
-            sx={{  background: "#EFEFEF" }}
+            sx={{ background: "#EFEFEF" }}
             elevation={0}
           >
             <Toolbar variant="dense">
@@ -55,7 +96,6 @@ function App() {
           </AppBar>
         </div>
         <div className="three">
-          
           <CardsList />
         </div>
         <div className="four"></div>

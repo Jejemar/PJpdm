@@ -23,7 +23,7 @@ const style = {
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "column",
-  borderRadius:2,
+  borderRadius: 2,
 };
 
 export const FillForm = (props) => {
@@ -52,7 +52,9 @@ export const FillForm = (props) => {
 
   return (
     <div>
-      <Button onClick={handleOpen} size="small">Add New Card</Button>
+      <Button onClick={handleOpen} size="small">
+        Add New Card
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -99,7 +101,11 @@ export const FillForm = (props) => {
           </div>
           <br />
           <div className="modalBlock1">
-            <span className="modalTitle">Late Start<br/>Date (LSD)</span>
+            <span className="modalTitle">
+              Late Start
+              <br />
+              Date (LSD)
+            </span>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 label="Basic example"
@@ -127,10 +133,20 @@ export const FillForm = (props) => {
           </div>
           <br />
           <div className="ButtonsBot">
-            <Button onClick={submit} variant="contained" color="success" size='small'>
+            <Button
+              onClick={submit}
+              variant="contained"
+              color="success"
+              size="small"
+            >
               Submit
             </Button>
-            <Button onClick={handleClose} variant="contained" color="error" size='small'>
+            <Button
+              onClick={handleClose}
+              variant="contained"
+              color="error"
+              size="small"
+            >
               Cancel
             </Button>
           </div>
