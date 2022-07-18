@@ -13,7 +13,14 @@ import Toolbar from "@mui/material/Toolbar";
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ height: "50px", backgroundImage: "linear-gradient(to bottom, #CFB53B, #FFE76C)" }} elevation={0}>
+      <AppBar
+        position="static"
+        sx={{
+          height: "50px",
+          backgroundImage: "linear-gradient(to bottom, #CFB53B, #FFE76C)",
+        }}
+        elevation={0}
+      >
         <Toolbar variant="dense">
           <IconButton
             size="large"

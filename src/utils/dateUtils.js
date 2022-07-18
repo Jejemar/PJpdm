@@ -1,4 +1,3 @@
-
 export const getDaysDiff = (dateA, dateB) => {
   if (typeof dateA === "string" && typeof dateB === "string") {
     return Math.floor((new Date(dateB) - new Date(dateA)) / (1000 * 3600 * 24));
@@ -8,5 +7,8 @@ export const getDaysDiff = (dateA, dateB) => {
 };
 
 export const formatDate = function (date) {
+  if (typeof date === "string") {
+    date = new Date(date);
+  }
   return date.toLocaleDateString();
 };

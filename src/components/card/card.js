@@ -1,4 +1,4 @@
-import "./card.css";
+import "./Card.css";
 
 import React, { useContext } from "react";
 import { formatDate, getDaysDiff } from "../../utils/dateUtils";
@@ -20,9 +20,6 @@ export const Card = (props) => {
   const handleDeleteCard = () => {
     deleteCard(id);
   };
- 
-  
-
 
   return (
     <div className="cardContainer">
@@ -33,21 +30,19 @@ export const Card = (props) => {
       {isMenuVisible ? (
         <div className="menu">
           <span>Edit</span>
-          <div className="btn-delete" onClick={handleDeleteCard}>Delete</div>          
+          <div className="btn-delete" onClick={handleDeleteCard}>
+            Delete
+          </div>
         </div>
       ) : null}
       <div className="top-container">
         <div className="first-block">{formatDate(esd)}</div>
-        <div className="second-block">
-          {getDaysDiff(esd, efd)}
-          </div>
+        <div className="second-block">{getDaysDiff(esd, efd)}</div>
         <div className="third-block">{formatDate(efd)}</div>
       </div>
       <div className="bottom-container">
         <div className="first-block-bot">{formatDate(lsd)}</div>
-        <div className="second-block-bot">
-          {getDaysDiff(lsd, lfd)}
-          </div>
+        <div className="second-block-bot">{getDaysDiff(lsd, lfd)}</div>
         <div className="third-block-bot">{formatDate(lfd)}</div>
       </div>
     </div>

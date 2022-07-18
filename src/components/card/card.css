@@ -1,111 +1,110 @@
 .menu {
-    position: absolute;
-    width: 68.3px;
-    height: 40px;
-    background-color: #cfb53b;
-    margin-left: 141.68px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .list {
-    display: flex;
-  }
-  
-  .cardContainer {
-    /* position: absolute; */
-    background-color: #cfb53b;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Agency FB";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    margin: 8px;
-  }
-  
-  .header {
-    width: 200px;
-    height: 36px;
-    background: #cfb53b;
-    border-radius: 10px 10px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5px;
-    font-size: 16px;
-  }
-  
-  .icon {
-    height: 24px;
-    width: 24px;
-  }
-  
-  .top-container {
-    display: flex;
-    gap: 2.5px;
-  }
-  
-  .first-block {
-    width: 68.3px;
-    height: 40px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .second-block {
-    width: 68.3px;
-    height: 40px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .third-block {
-    width: 68.3px;
-    height: 40px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .bottom-container {
-    margin-top: 2.5px;
-    display: flex;
-    gap: 2.5px;
-  }
-  
-  .first-block-bot {
-    width: 68.3px;
-    height: 40px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 0 0 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .second-block-bot {
-    width: 68.3px;
-    height: 40px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .third-block-bot {
-    width: 68.3px;
-    height: 40px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 0 0 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
+  position: absolute;
+  width: 68.3px;
+  height: 40px;
+  background-color: #cfb53b;
+  margin-left: 141.68px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardContainer {
+  /* position: absolute; */
+  background-color: #cfb53b;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Agency FB";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 8px;
+}
+
+.header {
+  width: 200px;
+  height: 36px;
+  background: #cfb53b;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  font-size: 16px;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.top-container {
+  display: flex;
+  gap: 2.5px;
+}
+
+.first-block {
+  width: 68.3px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-block {
+  width: 68.3px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.third-block {
+  width: 68.3px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-container {
+  margin-top: 2.5px;
+  display: flex;
+  gap: 2.5px;
+}
+
+.first-block-bot {
+  width: 68.3px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-block-bot {
+  width: 68.3px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.third-block-bot {
+  width: 68.3px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
