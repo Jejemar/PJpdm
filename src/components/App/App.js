@@ -4,7 +4,7 @@ import React, { createContext, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
 import ButtonAppBar from "../Header/header";
-import { CardsList } from "../card/Card";
+import { CardsList } from "../card/card";
 import { FillForm } from "../fillForm/FillForm";
 import Toolbar from "@mui/material/Toolbar";
 
@@ -49,6 +49,30 @@ const defaultCards = [
     lsd: "07/21/2022",
     lfd: "07/22/2022",
   },
+  {
+    id: "6",
+    activity: "Test 6",
+    esd: "07/19/2022",
+    efd: "07/20/2022",
+    lsd: "07/21/2022",
+    lfd: "07/22/2022",
+  },
+  {
+    id: "7",
+    activity: "Test 7",
+    esd: "07/19/2022",
+    efd: "07/20/2022",
+    lsd: "07/21/2022",
+    lfd: "07/22/2022",
+  },
+  {
+    id: "8",
+    activity: "Test 8",
+    esd: "07/19/2022",
+    efd: "07/20/2022",
+    lsd: "07/21/2022",
+    lfd: "07/22/2022",
+  },
 ];
 
 export const CardsContext = createContext({
@@ -70,7 +94,7 @@ function App() {
     setCards(newCards);
   };
 
-  const editCard = () => {};
+  // const editCard = () => {};
 
   return (
     <div className="App">

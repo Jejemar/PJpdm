@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./card.css";
 
 import React, { useContext } from "react";
 import { formatDate, getDaysDiff } from "../../utils/dateUtils";
