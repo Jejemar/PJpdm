@@ -52,7 +52,7 @@ export const FillForm = (props) => {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Add New Card</Button>
+      <Button onClick={handleOpen} size="small">Add New Card</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -62,7 +62,7 @@ export const FillForm = (props) => {
         <Box sx={style}>
           <h3>Please enter card information</h3>
           <div className="modalBlock1">
-            <span className="modalTitle">Activity</span>
+            <span className="modalTitle">Activity name</span>
             <Input
               color="primary"
               value={activity}

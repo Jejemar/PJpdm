@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { formatDate, getDaysDiff } from "../../utils/dateUtils";
 
 import { CardsContext } from "../App/App";
-import img from "../card/charm_menu-meatball.png";
+import img from "../card/charm_menu-meatball.svg";
 
 export const Card = (props) => {
   const { id, activity, esd, efd, lsd, lfd } = props.card;
