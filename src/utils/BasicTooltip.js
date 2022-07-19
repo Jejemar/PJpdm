@@ -1,15 +1,15 @@
 import * as React from "react";
 
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteIcon from "@mui/icons-material/Delete";
 import Tooltip from "@mui/material/Tooltip";
 
 export default function BasicTooltip() {
   return (
     <Tooltip title="Add New Card">
-      <AddCircleIcon style={{color: "Black"}}>
+      <AddCircleOutlineIcon style={{color: "Black"}}>
         <DeleteIcon />
-      </AddCircleIcon>
+      </AddCircleOutlineIcon>
     </Tooltip>
   );
 }
