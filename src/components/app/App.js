@@ -73,6 +73,14 @@ const defaultCards = [
     lsd: "07/21/2022",
     lfd: "07/22/2022",
   },
+  {
+    id: "9",
+    activity: "Test 8",
+    esd: "07/21/2022",
+    efd: "07/26/2022",
+    lsd: "07/23/2022",
+    lfd: "07/30/2022",
+  },
 ];
 
 export const CardsContext = createContext({
