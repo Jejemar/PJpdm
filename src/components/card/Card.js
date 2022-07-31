@@ -25,7 +25,7 @@ const style = {
   p: 4,
 };
 
-export const Card = (props) => {
+const Card = (props) => {
   const { id, activity, esd, efd, lsd, lfd } = props.card;
 
   const { deleteCard } = useContext(CardsContext);
@@ -181,3 +181,5 @@ export const Card = (props) => {
     </div>
   );
 };
+
+export default Card
