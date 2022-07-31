@@ -1,4 +1,4 @@
-import "./card.css";
+import "./Card.css";
 
 import { Button, Input } from "@mui/material";
 import React, { useContext, useState } from "react";
