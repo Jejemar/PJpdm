@@ -4,7 +4,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import IconPdm from "../Header/IconPdm.svg"
+import IconPdm from "./IconPdm.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 
@@ -18,7 +18,7 @@ export default function ButtonAppBar() {
         sx={{
           height: "50px",
           background: "#FFE76C",
-          boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.25)"
+          boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.25)",
         }}
         elevation={0}
       >

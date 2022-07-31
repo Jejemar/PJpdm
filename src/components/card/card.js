@@ -6,7 +6,7 @@ import { formatDate, getDaysDiff } from "../../utils/dateUtils";
 
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import Box from "@mui/material/Box";
-import { CardsContext } from "../App/App";
+import { CardsContext } from "../app/App";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import Modal from "@mui/material/Modal";
@@ -30,7 +30,7 @@ export const Card = (props) => {
 
   const { deleteCard } = useContext(CardsContext);
 
-  const [isMenuVisible, setIsMenuVisible] = React.useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);

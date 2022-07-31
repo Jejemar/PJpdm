@@ -3,8 +3,8 @@ import "./App.css";
 import React, { createContext, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
-import ButtonAppBar from "../Header/header";
-import { CardsList } from "../card/card";
+import ButtonAppBar from "../header/Header";
+import { CardsList } from "../card/Card";
 import { FillForm } from "../fillForm/FillForm";
 import Toolbar from "@mui/material/Toolbar";
 
