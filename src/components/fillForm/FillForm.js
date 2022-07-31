@@ -4,7 +4,7 @@ import { Box, Button, Input, Modal } from "@mui/material";
 import React, { useContext, useState } from "react";
 
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import BasicTooltip from "../../utils/BasicTooltip"
+import BasicTooltip from "../../utils/BasicTooltip";
 import { CardsContext } from "../App/App";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";

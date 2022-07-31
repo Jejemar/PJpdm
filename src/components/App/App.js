@@ -111,7 +111,7 @@ function App() {
         <div className="two">
           <AppBar
             position="static"
-            sx={{ background: "#EFEFEF" }}
+            sx={{ background: "#FFE76C" }}
             elevation={0}
           >
             <Toolbar variant="dense">
@@ -122,7 +122,9 @@ function App() {
         <div className="three">
           <CardsList />
         </div>
-        <div className="four"></div>
+        {/* <div className="four">
+          <TextforApp />
+        </div> */}
       </CardsContext.Provider>
     </div>
   );

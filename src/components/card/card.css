@@ -2,7 +2,7 @@
   position: absolute;
   width: 68.3px;
   height: 40px;
-  background-color: #cfb53b;
+  background-color: #FFE76C;
   margin-left: 141.50px;
   display: flex;
   flex-direction: column;
@@ -15,8 +15,7 @@
 
 .cardContainer {
   /* position: absolute; */
-  background-color: #cfb53b;
-  border-radius: 10px 10px 10px 10px;
+  background-color: #FFE76C;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Agency FB";
   font-style: normal;
@@ -28,8 +27,7 @@
 .header {
   width: 200px;
   height: 36px;
-  background: #cfb53b;
-  border-radius: 10px 10px 0px 0px;
+  background: #FFE76C;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,7 +82,6 @@
   width: 68.3px;
   height: 40px;
   background-color: rgb(255, 255, 255);
-  border-radius: 0 0 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +100,6 @@
   width: 68.3px;
   height: 40px;
   background-color: rgb(255, 255, 255);
-  border-radius: 0 0 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;
