@@ -1,14 +1,11 @@
 import "./FillForm.css";
 
-import { Box, Button, Input, Modal } from "@mui/material";
-import React, { useContext, useState } from "react";
+import {AdapterDateFns, DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
+import { Box, Button, Input, Modal, TextField } from "@mui/material";
+import React, { useContext, useState } from "react"; // This is the most correct way to import
 
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import BasicTooltip from "../../utils/BasicTooltip";
 import { CardsContext } from "../app/App";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import TextField from "@mui/material/TextField";
 
 const style = {
   position: "absolute",
@@ -27,7 +24,7 @@ const style = {
   borderRadius: 2,
 };
 
-export const FillForm = (props) => {
+const FillForm = (props) => {
   const { addCard } = useContext(CardsContext);
 
   // modal functions
@@ -156,3 +153,5 @@ export const FillForm = (props) => {
     </div>
   );
 };
+
+export default FillForm;

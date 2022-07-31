@@ -181,14 +181,3 @@ export const Card = (props) => {
     </div>
   );
 };
-
-export const CardsList = () => {
-  const { cards } = useContext(CardsContext);
-  return (
-    <div className="list">
-      {cards.map((card) => (
-        <Card card={card} key={card.id} />
-      ))}
-    </div>
-  );
-};

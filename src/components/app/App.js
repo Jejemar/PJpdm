@@ -4,8 +4,8 @@ import React, { createContext, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
 import ButtonAppBar from "../header/Header";
-import { CardsList } from "../card/Card";
-import { FillForm } from "../fillForm/FillForm";
+import CardsList from "../card/CardsList";
+import FillForm from "../fillForm/FillForm";
 import Toolbar from "@mui/material/Toolbar";
 
 const defaultCards = [
