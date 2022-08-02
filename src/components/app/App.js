@@ -79,6 +79,7 @@ export const CardsContext = createContext({
   cards: [],
   addCard: () => {},
   removeCard: () => {},
+  editCard: () => {},
 });
 
 function App() {
@@ -94,7 +95,10 @@ function App() {
     setCards(newCards);
   };
 
-  // const editCard = () => {};
+  const editCard = (id, updatedCard) => {
+    const editCards = cards.map((card) => card.id === id ? updatedCard : card);
+    setCards(editCards);
+  };
 
   return (
     <div className="App">
@@ -103,6 +107,7 @@ function App() {
           cards,
           addCard,
           deleteCard,
+          editCard,
         }}
       >
         <div className="one">
@@ -123,7 +128,7 @@ function App() {
           <CardsList />
         </div>
         {/* <div className="four">
-          <TextforApp />
+          <CardForm />
         </div> */}
       </CardsContext.Provider>
     </div>

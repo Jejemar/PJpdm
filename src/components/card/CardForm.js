@@ -1,10 +1,9 @@
-import {
-  AdapterDateFns,
-  DatePicker,
-  LocalizationProvider,
-} from "@mui/x-date-pickers";
 import { Box, Button, Input, TextField } from "@mui/material";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React, { useContext, useState } from "react";
+
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import CardsContext from '../app/App'
 
 const boxStyle = {
   position: "absolute",
@@ -24,13 +23,26 @@ const boxStyle = {
 };
 
 const CardForm = (props) => {
+
+  const {editCard} = useContext(CardsContext);
+
   const { card } = props; // provide card
-  const { activity, esd, efd, lsd, lfd } = card;
-  const [title, setTitle] = useState(activity || ""); // good
+  const {id, activity, esd, efd, lsd, lfd } = card;
+  const [title, setTitle] = useState(activity || ''); // good
   const [earlyStartDate, setEarlyStartDate] = useState(esd || null);
   const [earlyFinishDate, setEarlyFinishDate] = useState(efd || null);
   const [lateStartDate, setLateStartDate] = useState(lsd || null);
   const [lateFinishDate, setLateFinishDate] = useState(lfd || null);
+
+  const updatedCard = {id, activity, esd, efd, lsd, lfd}
+
+  const uq_id = props.id;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    editCard(uq_id, updatedCard);
+  }
+
   return (
     <Box sx={boxStyle}>
       <h3>Please enter card information</h3>
@@ -105,7 +117,7 @@ const CardForm = (props) => {
       <br />
       <div className="ButtonsBot">
         <Button
-          // onClick={submit}
+          onClick={handleSubmit}
           variant="contained"
           color="success"
           size="small"
