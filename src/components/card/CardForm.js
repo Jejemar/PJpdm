@@ -1,9 +1,8 @@
 import { Box, Button, Input, TextField } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import CardsContext from '../app/App'
 
 const boxStyle = {
   position: "absolute",
@@ -23,25 +22,45 @@ const boxStyle = {
 };
 
 const CardForm = (props) => {
+  const { action, card, onSubmit, onCancel } = props;
+  const { id, activity, esd, efd, lsd, lfd } = card;
 
-  const {editCard} = useContext(CardsContext);
-
-  const { card } = props; // provide card
-  const {id, activity, esd, efd, lsd, lfd } = card;
-  const [title, setTitle] = useState(activity || ''); // good
+  const [title, setTitle] = useState(activity || "");
   const [earlyStartDate, setEarlyStartDate] = useState(esd || null);
   const [earlyFinishDate, setEarlyFinishDate] = useState(efd || null);
   const [lateStartDate, setLateStartDate] = useState(lsd || null);
   const [lateFinishDate, setLateFinishDate] = useState(lfd || null);
 
-  const updatedCard = {id, activity, esd, efd, lsd, lfd}
-
-  const uq_id = props.id;
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    editCard(uq_id, updatedCard);
-  }
+
+    if (action === "add") {
+      onSubmit(Math.floor(Math.random) * 1000, activity, esd, efd, lsd, lfd);
+    }
+
+    if (action === "edit") {
+      onSubmit(id, {
+        id,
+        activity: title,
+        esd: earlyStartDate,
+        efd: earlyFinishDate,
+        lsd: lateStartDate,
+        lfd: lateFinishDate,
+      });
+    }
+  };
+
+  const handleCancel = () => {
+    if (action === "add") {
+      setTitle("");
+      setEarlyStartDate(null);
+      setEarlyFinishDate(null);
+      setLateStartDate(null);
+      setLateFinishDate(null);
+    }
+    // will be called in any case
+    onCancel();
+  };
 
   return (
     <Box sx={boxStyle}>
@@ -125,7 +144,7 @@ const CardForm = (props) => {
           Submit
         </Button>
         <Button
-          // onClick={handleClose}
+          onClick={handleCancel}
           variant="contained"
           color="error"
           size="small"
