@@ -96,8 +96,10 @@ function App() {
   };
 
   const editCard = (id, updatedCard) => {
-    const editCards = cards.map((card) => card.id === id ? updatedCard : card);
-    setCards(editCards);
+    const updatedCards = cards.map((card) =>
+      card.id === id ? updatedCard : card
+    );
+    setCards(updatedCards);
   };
 
   return (

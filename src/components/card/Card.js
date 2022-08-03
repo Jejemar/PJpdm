@@ -1,6 +1,6 @@
 import "./Card.css";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { formatDate, getDaysDiff } from "../../utils/dateUtils";
 
 import CardForm from "../card/CardForm";
@@ -8,29 +8,55 @@ import { CardsContext } from "../app/App";
 import { Modal } from "@mui/material";
 import img from "../card/charm_menu-meatball.svg";
 
+/**
+ * This component uses CardForm to edit it's entries
+ *
+ */
 const Card = (props) => {
   const { id, activity, esd, efd, lsd, lfd } = props.card;
 
-  const { deleteCard } = useContext(CardsContext);
+  const { editCard, deleteCard } = useContext(CardsContext);
 
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
   };
 
+  /**
+   * After click on Submit transfer new data to context
+   * Close card menu and card form
+   */
+  const handleEditCard = (id, updatedCard) => {
+    editCard(id, updatedCard);
+    setIsMenuVisible(false);
+    setIsFormVisible(false);
+  };
+
+  /**
+   * After click on Cancel close menu and form
+   */
+  const handleCancelEdit = () => {
+    setIsMenuVisible(false);
+    setIsFormVisible(false);
+  };
+
   const handleDeleteCard = () => {
     deleteCard(id);
   };
 
-  const [show, setShow] = useState(false);
+  /**
+   * Close menu and open form
+   */
+  const openForm = () => {
+    if (isMenuVisible) {
+      setIsMenuVisible(false);
+    }
+    setIsFormVisible(true);
+  };
 
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
-
-  useEffect(() => {
-    handleClose();
-  }, [props]);
+  const closeForm = () => setIsFormVisible(false);
 
   return (
     <div className="cardContainer">
@@ -40,20 +66,26 @@ const Card = (props) => {
       </div>
       {isMenuVisible ? (
         <div className="menu">
-          <div className="btn-edit" onClick={handleShow}>
+          <div className="btn-edit" onClick={openForm}>
             Edit
           </div>
-          <Modal
-            open={show}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <CardForm theCard={props} />
-          </Modal>
           <div className="btn-delete" onClick={handleDeleteCard}>
             Delete
           </div>
+          {/* < == Card Form == > */}
+          <Modal
+            open={isFormVisible}
+            onClose={closeForm}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <CardForm
+              action="edit"
+              card={props.card}
+              onSubmit={handleEditCard}
+              onCancel={handleCancelEdit}
+            />
+          </Modal>
         </div>
       ) : null}
       <div className="top-container">
