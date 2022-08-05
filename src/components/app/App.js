@@ -1,6 +1,6 @@
 import "./App.css";
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
 import ButtonAppBar from "../header/Header";
@@ -85,22 +85,22 @@ export const CardsContext = createContext({
 function App() {
   const [cards, setCards] = useState(defaultCards);
 
-  const addCard = (id, activity, esd, efd, lsd, lfd) => {
-    const newCard = { id, activity, esd, efd, lsd, lfd };
-    setCards((prevCards) => [...prevCards, newCard]);
-  };
+  const addCard = useCallback(
+    (newCard) => setCards((prevCards) => [...prevCards, newCard]),
+    []
+  );
 
-  const deleteCard = (id) => {
-    const newCards = cards.filter((card) => card.id !== id);
-    setCards(newCards);
-  };
+  const deleteCard = useCallback(
+    (id) => setCards(cards.filter((card) => card.id !== id)),
+    []
+  );
 
-  const editCard = (id, updatedCard) => {
+  const editCard = useCallback((updatedCard) => {
     const updatedCards = cards.map((card) =>
-      card.id === id ? updatedCard : card
+      card.id === updatedCard.id ? updatedCard : card
     );
     setCards(updatedCards);
-  };
+  }, []);
 
   return (
     <div className="App">

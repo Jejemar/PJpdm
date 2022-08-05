@@ -28,8 +28,8 @@ const Card = (props) => {
    * After click on Submit transfer new data to context
    * Close card menu and card form
    */
-  const handleEditCard = (id, updatedCard) => {
-    editCard(id, updatedCard);
+  const handleEditCard = (updatedCard) => {
+    editCard(updatedCard);
     setIsMenuVisible(false);
     setIsFormVisible(false);
   };
@@ -50,9 +50,9 @@ const Card = (props) => {
    * Close menu and open form
    */
   const openForm = () => {
-    if (isMenuVisible) {
-      setIsMenuVisible(false);
-    }
+    // if (isMenuVisible) {
+    //   setIsMenuVisible(false);
+    // }
     setIsFormVisible(true);
   };
 

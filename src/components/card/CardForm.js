@@ -23,23 +23,39 @@ const boxStyle = {
 
 const CardForm = (props) => {
   const { action, card, onSubmit, onCancel } = props;
-  const { id, activity, esd, efd, lsd, lfd } = card;
 
-  const [title, setTitle] = useState(activity || "");
-  const [earlyStartDate, setEarlyStartDate] = useState(esd || null);
-  const [earlyFinishDate, setEarlyFinishDate] = useState(efd || null);
-  const [lateStartDate, setLateStartDate] = useState(lsd || null);
-  const [lateFinishDate, setLateFinishDate] = useState(lfd || null);
+  const [title, setTitle] = useState("");
+  const [earlyStartDate, setEarlyStartDate] = useState(null);
+  const [earlyFinishDate, setEarlyFinishDate] = useState(null);
+  const [lateStartDate, setLateStartDate] = useState(null);
+  const [lateFinishDate, setLateFinishDate] = useState(null);
+
+  if (action === "edit") {
+    const { activity, esd, efd, lsd, lfd } = card;
+    setTitle(activity);
+    setEarlyStartDate(esd);
+    setEarlyFinishDate(efd);
+    setLateStartDate(lsd);
+    setLateFinishDate(lfd);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (action === "add") {
-      onSubmit(Math.floor(Math.random) * 1000, activity, esd, efd, lsd, lfd);
+      onSubmit({
+        id: Math.floor(Math.random() * 1000),
+        activity: title,
+        esd: earlyStartDate,
+        efd: earlyFinishDate,
+        lsd: lateStartDate,
+        lfd: lateFinishDate,
+      });
     }
 
     if (action === "edit") {
-      onSubmit(id, {
+      const { id } = card;
+      onSubmit({
         id,
         activity: title,
         esd: earlyStartDate,
