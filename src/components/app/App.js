@@ -2,11 +2,9 @@ import "./App.css";
 
 import React, { createContext, useCallback, useState } from "react";
 
-import AppBar from "@mui/material/AppBar";
 import ButtonAppBar from "../header/Header";
 import CardsList from "../card/CardsList";
-import FillForm from "../fillForm/FillForm";
-import Toolbar from "@mui/material/Toolbar";
+import ToolBar from "../ToolBar/ToolBar"
 
 const defaultCards = [
   {
@@ -116,15 +114,7 @@ function App() {
           <ButtonAppBar />
         </div>
         <div className="two">
-          <AppBar
-            position="static"
-            sx={{ background: "#FFE76C" }}
-            elevation={0}
-          >
-            <Toolbar variant="dense">
-              <FillForm />
-            </Toolbar>
-          </AppBar>
+          <ToolBar />
         </div>
         <div className="three">
           <CardsList />
