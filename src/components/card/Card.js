@@ -59,54 +59,56 @@ const Card = (props) => {
   const closeForm = () => setIsFormVisible(false);
 
   return (
-    <div className="cardContainer">
-      <div className="header">
-        <span>{activity}</span>
-        <img src={img} alt="img" onClick={toggleMenu}></img>
-      </div>
-      {isMenuVisible ? (
-        <div className="menu">
-          <div className="btn-edit" onClick={openForm}>
-            Edit
+    <>
+      <div className="cardContainer">
+        <div className="header">
+          <span>{activity}</span>
+          <img src={img} alt="img" onClick={toggleMenu}></img>
+        </div>
+        {isMenuVisible ? (
+          <div className="menu">
+            <div className="btn-edit" onClick={openForm}>
+              Edit
+            </div>
+            <div className="btn-delete" onClick={handleDeleteCard}>
+              Delete
+            </div>
           </div>
-          <div className="btn-delete" onClick={handleDeleteCard}>
-            Delete
+        ) : null}
+        <div className="top-container">
+          <div className="first-block">{formatDate(esd)}</div>
+          <div className="second-block">
+            {getDaysDiff(esd, efd) < 0
+              ? "Please re-enter date"
+              : getDaysDiff(esd, efd)}
           </div>
-          {/* < == Card Form == > */}
-          <Modal
-            open={isFormVisible}
-            onClose={closeForm}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <CardForm
-              action="edit"
-              card={props.card}
-              onSubmit={handleEditCard}
-              onCancel={handleCancelEdit}
-            />
-          </Modal>
+          <div className="third-block">{formatDate(efd)}</div>
         </div>
-      ) : null}
-      <div className="top-container">
-        <div className="first-block">{formatDate(esd)}</div>
-        <div className="second-block">
-          {getDaysDiff(esd, efd) < 0
-            ? "Please re-enter date"
-            : getDaysDiff(esd, efd)}
+        <div className="bottom-container">
+          <div className="first-block-bot">{formatDate(lsd)}</div>
+          <div className="second-block-bot">
+            {getDaysDiff(lsd, lfd) < 0
+              ? "Please re-enter date"
+              : getDaysDiff(lsd, lfd)}
+          </div>
+          <div className="third-block-bot">{formatDate(lfd)}</div>
         </div>
-        <div className="third-block">{formatDate(efd)}</div>
       </div>
-      <div className="bottom-container">
-        <div className="first-block-bot">{formatDate(lsd)}</div>
-        <div className="second-block-bot">
-          {getDaysDiff(lsd, lfd) < 0
-            ? "Please re-enter date"
-            : getDaysDiff(lsd, lfd)}
-        </div>
-        <div className="third-block-bot">{formatDate(lfd)}</div>
-      </div>
-    </div>
+      {/* < == Card Form == > */}
+      <Modal
+        open={isFormVisible}
+        onClose={closeForm}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <CardForm
+          action="edit"
+          card={props.card}
+          onSubmit={handleEditCard}
+          onCancel={handleCancelEdit}
+        />
+      </Modal>
+    </>
   );
 };
 

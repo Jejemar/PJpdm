@@ -1,6 +1,6 @@
 import { Box, Button, Input, TextField } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
@@ -21,23 +21,32 @@ const boxStyle = {
   borderRadius: 2,
 };
 
-const CardForm = (props) => {
+const CardForm = forwardRef((props, ref) => {
   const { action, card, onSubmit, onCancel } = props;
 
-  const [title, setTitle] = useState("");
-  const [earlyStartDate, setEarlyStartDate] = useState(null);
-  const [earlyFinishDate, setEarlyFinishDate] = useState(null);
-  const [lateStartDate, setLateStartDate] = useState(null);
-  const [lateFinishDate, setLateFinishDate] = useState(null);
+  const [title, setTitle] = useState(action === "edit" ? card.activity : "");
+  const [earlyStartDate, setEarlyStartDate] = useState(
+    action === "edit" ? card.esd : null
+  );
+  const [earlyFinishDate, setEarlyFinishDate] = useState(
+    action === "edit" ? card.efd : null
+  );
+  const [lateStartDate, setLateStartDate] = useState(
+    action === "edit" ? card.lsd : null
+  );
+  const [lateFinishDate, setLateFinishDate] = useState(
+    action === "edit" ? card.lfd : null
+  );
 
-  if (action === "edit") {
-    const { activity, esd, efd, lsd, lfd } = card;
-    setTitle(activity);
-    setEarlyStartDate(esd);
-    setEarlyFinishDate(efd);
-    setLateStartDate(lsd);
-    setLateFinishDate(lfd);
-  }
+  // This caused infinite loop before
+  // if (action === "edit") {
+  //   const { activity, esd, efd, lsd, lfd } = card;
+  //   setTitle(activity);
+  //   setEarlyStartDate(esd);
+  //   setEarlyFinishDate(efd);
+  //   setLateStartDate(lsd);
+  //   setLateFinishDate(lfd);
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -170,6 +179,6 @@ const CardForm = (props) => {
       </div>
     </Box>
   );
-};
+});
 
 export default CardForm;
