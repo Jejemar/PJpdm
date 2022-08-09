@@ -3,9 +3,9 @@ import "./App.css";
 import React, { createContext, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
-import ButtonAppBar from "../header/Header";
 import CardsList from "../card/CardsList";
-import FillForm from "../fillForm/FillForm";
+import Navbar from "../Navbar/Navbar";
+import ToolBar from "../Toolbar/ToolBar";
 import Toolbar from "@mui/material/Toolbar";
 
 const defaultCards = [
@@ -105,7 +105,7 @@ function App() {
         }}
       >
         <div className="one">
-          <ButtonAppBar />
+          <Navbar />
         </div>
         <div className="two">
           <AppBar
@@ -114,7 +114,7 @@ function App() {
             elevation={0}
           >
             <Toolbar variant="dense">
-              <FillForm />
+              <ToolBar />
             </Toolbar>
           </AppBar>
         </div>
@@ -122,7 +122,7 @@ function App() {
           <CardsList />
         </div>
         {/* <div className="four">
-          <CardForm />
+          
         </div> */}
       </CardsContext.Provider>
     </div>

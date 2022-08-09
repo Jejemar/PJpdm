@@ -63,10 +63,10 @@ const Card = (props) => {
       <div className="cardContainer">
         <div className="header">
           <span>{activity}</span>
-          <img src={img} alt="img" onClick={toggleMenu}></img>
+          <img src={img} alt="img" onClick={toggleMenu} ></img>
         </div>
         {isMenuVisible ? (
-          <div className="menu">
+          <div className="menu" onMouseLeave={toggleMenu}>
             <div className="btn-edit" onClick={openForm}>
               Edit
             </div>
