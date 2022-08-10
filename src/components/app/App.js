@@ -5,6 +5,7 @@ import React, { createContext, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import CardsList from "../card/CardsList";
 import Navbar from "../Navbar/Navbar";
+import Sidebar from "../sideBar/Sidebar";
 import ToolBar from "../Toolbar/ToolBar";
 import Toolbar from "@mui/material/Toolbar";
 
@@ -121,9 +122,9 @@ function App() {
         <div className="three">
           <CardsList />
         </div>
-        {/* <div className="four">
-          
-        </div> */}
+        <div className="four">
+          <Sidebar />
+        </div>
       </CardsContext.Provider>
     </div>
   );
