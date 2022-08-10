@@ -1,9 +1,9 @@
 .navbar {
   background-color: #ffe76c;
-  height: 70px;
+  height: 4rem;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  padding-left: 1rem; /* get a padding from the side*/
 }
 
 .nav-menu {

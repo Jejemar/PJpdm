@@ -120,10 +120,8 @@ function App() {
           </AppBar>
         </div>
         <div className="three">
-          <CardsList />
-        </div>
-        <div className="four">
           <Sidebar />
+          <CardsList />
         </div>
       </CardsContext.Provider>
     </div>

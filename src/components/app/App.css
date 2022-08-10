@@ -15,8 +15,7 @@
 }
 
 .three {
-  grid-column: 2/7;
+  grid-column: 7 / 1;
   grid-row: 3;
-  /* background-color: #efefef; */
-  height: 800px;
+  height: 100vh; /* to test scroll and stick panel*/
 }

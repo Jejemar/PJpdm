@@ -1,11 +1,11 @@
 import "./ToolBar.css";
 
 import AppBar from "@mui/material/AppBar";
-import FormatColorFillOutlinedIcon from '@mui/icons-material/FormatColorFillOutlined';
+import FormatColorFillOutlinedIcon from "@mui/icons-material/FormatColorFillOutlined";
 import IconButton from "@mui/material/IconButton";
-import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
-import NavigationOutlinedIcon from '@mui/icons-material/NavigationOutlined';
-import PanToolOutlinedIcon from '@mui/icons-material/PanToolOutlined';
+import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
+import NavigationOutlinedIcon from "@mui/icons-material/NavigationOutlined";
+import PanToolOutlinedIcon from "@mui/icons-material/PanToolOutlined";
 import React from "react";
 import RedoIcon from "@mui/icons-material/Redo";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,11 +13,24 @@ import UndoIcon from "@mui/icons-material/Undo";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ZoomOutIcon from "@mui/icons-material/ZoomOut";
 
+/**
+ * I wanted to override padding styles for toolbar, so it's aligned constantly for all.
+ * Will check it later
+ */
+const rootBarSX = {
+  // "& .MuiToolbar-dense": {
+  //   padding: 0,
+  // },
+  // "& @media (min-width: 600px)": {
+  //   "MuiToolbar-root": {
+  //     padding: "0 1rem",
+  //   },
+  // },
+};
 const ToolBar = () => {
   return (
     <AppBar position="static" sx={{ background: "#FFE76C" }} elevation={0}>
-      <Toolbar variant="dense" margin="dense">
-        
+      <Toolbar variant="dense" margin="dense" sx={rootBarSX}>
         <IconButton size="small" edge="start" aria-label="menu" sx={{ mr: 2 }}>
           <NavigationOutlinedIcon style={{ color: "Black" }} />
         </IconButton>

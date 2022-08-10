@@ -1,27 +1,27 @@
 import "./Navbar.css";
 
-import * as AiIcons from "react-icons/ai";
+// import * as AiIcons from "react-icons/ai";
 
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 
-import IconButton from "@mui/material/IconButton";
+// import IconButton from "@mui/material/IconButton";
 import IconPdm from "./IconPdm.svg";
-import MenuIcon from "@mui/icons-material/Menu";
-import { SidebarData } from "./SideBarData";
+// import MenuIcon from "@mui/icons-material/Menu";
+// import { SidebarData } from "./SideBarData";
 
 // import * as FaIcons from "react-icons/fa";
 
 function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
+  // const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => {
-    setSidebar(!sidebar);
-  };
+  // const showSidebar = () => {
+  //   setSidebar(!sidebar);
+  // };
 
   return (
     <Fragment>
       <div className="navbar">
-        <IconButton
+        {/* <IconButton
           size="large"
           edge="start"
           color="inherit"
@@ -32,12 +32,12 @@ function Navbar() {
           padding="20px"
         >
           <MenuIcon />
-        </IconButton>
+        </IconButton> */}
         <img src={IconPdm} alt="MainIcon"></img>
         {/* <FaIcons.FaBars onClick={showSidebar}/> */}
       </div>
 
-      <nav
+      {/* <nav
         className={sidebar ? "nav-menu active" : "nav-menu"}
         // onMouseLeave={showSidebar}
       >
@@ -65,7 +65,7 @@ function Navbar() {
             );
           })}
         </ul>
-      </nav>
+      </nav> */}
     </Fragment>
   );
 }
