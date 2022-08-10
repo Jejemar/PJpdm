@@ -24,7 +24,7 @@ const FillForm = (props) => {
   return (
     <>
       <Button onClick={handleOpen} size="small">
-        <BasicTooltip></BasicTooltip>
+        <BasicTooltip />
       </Button>
       <Modal
         open={isModalVisible}

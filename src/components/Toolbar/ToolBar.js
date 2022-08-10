@@ -1,7 +1,6 @@
 import "./ToolBar.css";
 
 import AppBar from "@mui/material/AppBar";
-import FillForm from "../fillForm/FillForm";
 import FormatColorFillOutlinedIcon from '@mui/icons-material/FormatColorFillOutlined';
 import IconButton from "@mui/material/IconButton";
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
@@ -18,7 +17,7 @@ const ToolBar = () => {
   return (
     <AppBar position="static" sx={{ background: "#FFE76C" }} elevation={0}>
       <Toolbar variant="dense" margin="dense">
-        <FillForm />
+        
         <IconButton size="small" edge="start" aria-label="menu" sx={{ mr: 2 }}>
           <NavigationOutlinedIcon style={{ color: "Black" }} />
         </IconButton>
